@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.0-rc.2 — 2026-09-24
+
+- Version metadata aligned to `0.1.0-rc.2`
+- GitHub Actions CI active at `.github/workflows/ci.yml` (pytest on push/PR)
+- README CI section updated to match active workflow
+
 ## 0.1.0-rc.1 — 2026-09-24
 
 Initial release candidate.

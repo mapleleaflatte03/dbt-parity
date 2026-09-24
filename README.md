@@ -2,7 +2,7 @@
 
 Compare **compiled SQL** and **schema / relation identifiers** across two dbt targets so analytics engineers can catch IDE ↔ deploy drift before (or after) a job fails.
 
-**Version:** `0.1.0-rc.1` (release candidate — not published to PyPI yet)
+**Version:** `0.1.0-rc.2` (release candidate — not published to PyPI yet)
 
 ## Who this is for
 
@@ -108,9 +108,14 @@ If dbt Labs ships a **first-party** IDE ↔ job **compiled SQL and schema/relati
 
 ## CI
 
-A pytest workflow template ships at [`ci/github-actions-ci.yml`](ci/github-actions-ci.yml).
-Copy it to `.github/workflows/ci.yml` when the pushing credential has the GitHub `workflow` scope
-(current `gh` OAuth token for mapleleaflatte03 does not). Local tests: `pytest` after `pip install -e ".[dev]"`.
+GitHub Actions runs pytest on every push to `main` and on pull requests via
+[`.github/workflows/ci.yml`](.github/workflows/ci.yml)
+(Python 3.10 and 3.12). Example green run:
+https://github.com/mapleleaflatte03/dbt-parity/actions/runs/36002057675
+
+A copy of the same workflow also lives at [`ci/github-actions-ci.yml`](ci/github-actions-ci.yml) for reference.
+
+Local tests: `pytest` after `pip install -e ".[dev]"`.
 
 ## License
 
