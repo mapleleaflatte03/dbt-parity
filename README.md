@@ -69,6 +69,10 @@ Per node: `identical` · `expected` (matched ignore rule) · `actionable` · `on
 
 Configure expected divergence in `.dbtparity.yml` at the project root. See [docs/configuration.md](docs/configuration.md).
 
+## Architecture
+
+See [docs/architecture.md](docs/architecture.md).
+
 ## Non-goals (v0)
 
 - Not a warehouse **data-diff** / row-content parity tool
