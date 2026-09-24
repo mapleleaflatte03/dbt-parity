@@ -102,6 +102,12 @@ If dbt Labs ships a **first-party** IDE ↔ job **compiled SQL and schema/relati
 - [Contributing](CONTRIBUTING.md)
 - [Changelog](CHANGELOG.md)
 
+## CI
+
+A pytest workflow template ships at [`ci/github-actions-ci.yml`](ci/github-actions-ci.yml).
+Copy it to `.github/workflows/ci.yml` when the pushing credential has the GitHub `workflow` scope
+(current `gh` OAuth token for mapleleaflatte03 does not). Local tests: `pytest` after `pip install -e ".[dev]"`.
+
 ## License
 
 Apache-2.0 — see [LICENSE](LICENSE).
