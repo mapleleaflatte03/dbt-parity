@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dbt-parity"
+version = "0.1.0-rc.1"
+description = "Compare compiled SQL and schema/relation identifiers across two dbt targets"
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.9"
+authors = [{ name = "dbt-parity contributors" }]
+keywords = ["dbt", "parity", "compiled-sql", "analytics-engineering"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Quality Assurance",
+]
+dependencies = [
+  "click>=8.0",
+  "PyYAML>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+dbt-parity = "dbt_parity.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/mapleleaflatte03/dbt-parity"
+Repository = "https://github.com/mapleleaflatte03/dbt-parity"
+Issues = "https://github.com/mapleleaflatte03/dbt-parity/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = [
+  "integration: optional tests that require dbt-core",
+]

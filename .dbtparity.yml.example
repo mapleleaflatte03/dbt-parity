@@ -1,0 +1,5 @@
+# Copy to your dbt project root as `.dbtparity.yml`
+ignore_nodes:
+  - "model.my_project.dev_only_*"
+ignore_sql_regex:
+  - "where\\s+_loaded_at\\s*>\\s*current_date\\s*-\\s*\\d+"

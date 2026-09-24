@@ -1,0 +1,47 @@
+{
+  "metadata": {
+    "dbt_schema_version": "https://schemas.getdbt.com/dbt/manifest/v12.json",
+    "dbt_version": "1.7.0",
+    "project_name": "demo_project"
+  },
+  "nodes": {
+    "model.demo_project.customers": {
+      "unique_id": "model.demo_project.customers",
+      "name": "customers",
+      "resource_type": "model",
+      "package_name": "demo_project",
+      "database": "analytics",
+      "schema": "dev_simon",
+      "alias": "customers",
+      "relation_name": "analytics.dev_simon.customers",
+      "original_file_path": "models/customers.sql",
+      "compiled_path": "compiled/demo_project/models/customers.sql",
+      "compiled_code": "select id, email from raw.users where _loaded_at > current_date - 7\n"
+    },
+    "model.demo_project.orders": {
+      "unique_id": "model.demo_project.orders",
+      "name": "orders",
+      "resource_type": "model",
+      "package_name": "demo_project",
+      "database": "analytics",
+      "schema": "dev_simon",
+      "alias": "orders",
+      "relation_name": "analytics.dev_simon.orders",
+      "original_file_path": "models/orders.sql",
+      "compiled_path": "compiled/demo_project/models/orders.sql",
+      "compiled_code": "select * from analytics.dev_simon.stg_orders\n"
+    },
+    "test.demo_project.unique_customers_id": {
+      "unique_id": "test.demo_project.unique_customers_id",
+      "name": "unique_customers_id",
+      "resource_type": "test",
+      "package_name": "demo_project",
+      "database": "analytics",
+      "schema": "dev_simon",
+      "alias": "unique_customers_id",
+      "original_file_path": "tests/unique_customers_id.sql",
+      "compiled_path": "compiled/demo_project/tests/unique_customers_id.sql",
+      "compiled_code": "select id from analytics.dev_simon.customers group by 1 having count(*) > 1\n"
+    }
+  }
+}
