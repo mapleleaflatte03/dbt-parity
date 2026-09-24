@@ -59,6 +59,28 @@ Full SQL diffs (default is truncated):
 dbt-parity compare ... --full-diff
 ```
 
+## Visuals
+
+### CLI demo (artifact mode)
+
+![dbt-parity artifact-mode CLI still](docs/images/cli-demo.png)
+
+Artifact-mode still: synthetic fixtures (`fixtures/synthetic/target_a` / `target_b`). Command:
+
+```bash
+dbt-parity compare \
+  --target-a dev \
+  --target-b prod \
+  --artifact-a fixtures/synthetic/target_a \
+  --artifact-b fixtures/synthetic/target_b
+```
+
+### Flow
+
+![dbt-parity compare flow](docs/images/flow-diagram.png)
+
+Target A/B → compile → compare **compiled SQL** and **relation IDs** → report. See [Non-goals (v0)](#non-goals-v0).
+
 ## Exit codes
 
 | Code | Meaning |
