@@ -2,7 +2,9 @@
 
 Compare **compiled SQL** and **schema / relation identifiers** across two dbt targets so analytics engineers can catch IDE ↔ deploy drift before (or after) a job fails.
 
-**Version:** `0.1.0-rc.2` (release candidate — not published to PyPI yet)
+**Version:** `0.1.0-rc.2` (release candidate)
+
+**Current RC:** [v0.1.0-rc.2](https://github.com/mapleleaflatte03/dbt-parity/releases/tag/v0.1.0-rc.2) — install from git for this RC; **not on PyPI**.
 
 ## Who this is for
 
@@ -31,6 +33,8 @@ dbt-parity compare \
   --artifact-a fixtures/synthetic/target_a \
   --artifact-b fixtures/synthetic/target_b
 ```
+
+Try the [synthetic fixture walkthrough](docs/examples.md) (no warehouse required).
 
 ### Two-target compile mode
 
